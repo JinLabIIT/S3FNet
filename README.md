@@ -12,16 +12,13 @@ S3F defines an API for parallel discrete-event simulation, and has the following
 * S3F uses only standard language and library features found in the GNU C++ compiler, g++.
 * Time advancement is broken up into epochs, between which control is released from the simulation threads to allow other activity (e.g., recalculation of received radio strength maps and location of mobile devices).
 * S3F gives a modeler extreme control over the ordering of process body executions.
-* S3F supports the OpenVZ-based network emulation based on the notion of virtual clock.
 
-S3FNet is a network simulator built on top of the S3F kernel. It is capable for creating communication network models with network devices (e.g., host, switch, and router) and layered protocols (e.g., TCP/IP, OpenFlow). We also expand its capacity by integrating the network simulator with the OpenVZ-based network emulation. Users can use emulation to represent the execution of critical software, and simulation to model an extensive ensemble of background computation and communication.
+S3FNet is a network simulator built on top of the S3F kernel. It is capable for creating communication network models with network devices (e.g., host, switch, and router) and layered protocols (e.g., TCP/IP, OpenFlow). 
 The main features of S3FNet are summarized as follows:
 
 * Parallel discrete-event simulation
-* Virtual-machine-based (OpenVZ) emulation (embedded in virtual time instead of wall-clock time)
 * Distributed emulation over TCP/IP networking
 * Application lookahead (neural-network-based model)
-* Simulation and emulation of OpenFlow-based software-defined networks (SDN)
 
 # Installation
 
@@ -75,8 +72,6 @@ The build.sh script in S3F’s root directory is used for building the S3F/S3FNe
 ```shell
 % ./build.sh
 ```
-
-By default, it clean builds the network simulator for the base version; and clean builds the system with OpenVZ-based emulation (no application lookahead) and OpenFlow simulation for the full version.
 
 Usage: build.sh [-h] [-n arg] [-f] [-i] [-s] [-l] [-d]
 
@@ -218,14 +213,9 @@ The S3F project structure is summarized as follows:
 ├── build.sh                           # script for building the S3F/S3FNet project
 ├── dml                                # dml library
 ├── doc                                # documentation: user manual, doxygen documents ...
-├── kernel                             # virtual time kernel based on linux 2.6.18 for OpenVZ-based emulation
 ├── metis                              # metis library
-├── openflowlib                        # OpenFlow library
-├── openvzemu_include                  # linux header needed for OpenVZ-based emulation
-├── openvzemu_include.tar.gz           # tarball of the above headers
 ├── rng                                # random number generator
 ├── s3f.h                              # Header file of the S3F project
 ├── s3fnet                             # S3FNet network simulator
-├── simctrl                            # emulation management module
 └── time                               # event list
 ```
