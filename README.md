@@ -40,9 +40,9 @@ Software packages required for building different features of S3F/S3FNet are sum
 
 - OpenFlow Simulation
 
-  Required package: libxml, boost, Python 2.7.5To install libxml:
+  Required package: libxml, automake, flex, boost, Python 2.7.5
 
-  To install libxml:
+  To install libxml, automake, flex:
 
 ```shell
 % sudo apt-get install libxml2-dev
