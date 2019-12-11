@@ -46,6 +46,8 @@ Software packages required for building different features of S3F/S3FNet are sum
 
 ```shell
 % sudo apt-get install libxml2-dev
+% sudo apt-get install automake
+% sudo apt-get install flex
 ```
 
 ​		To install boost library:
