@@ -233,7 +233,7 @@ void NBTCPClientSession::non_blocking_loop(NBTCPClientSessionContinuation* const
                  */
                 caller->status = NBTCPClientSessionContinuation::NB_TCP_CLIENT_STATUS_RECEIVING;
                 caller->success();
-            } else if (res != NBSocketMaster::EWOULDBLOCK) {
+            } else if (res != NBSocketMaster::MYEWOULDBLOCK) {
                 TCP_DUMP(printf("[host=\"%s\"] encountered error %d\n",
                         inHost()->nhi.toString(),res));
             }

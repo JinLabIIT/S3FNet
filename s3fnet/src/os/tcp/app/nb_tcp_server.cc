@@ -172,7 +172,7 @@ int FileSender::handleIO(NBSocketMaster* sm, NBTCPServerSessionContinuation* cnt
             mBufUsed += cnt->retval;
             mBytesSent += cnt->retval;
         }
-    } else if(res != NBSocketMaster::EWOULDBLOCK) {
+    } else if(res != NBSocketMaster::MYEWOULDBLOCK) {
         TCP_DUMP(printf("send failed (error %d, retval = %d)!\n",res,cnt->retval));
     } else {
       return 2;

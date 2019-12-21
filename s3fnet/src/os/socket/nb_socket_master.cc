@@ -331,7 +331,7 @@ int NBSocketMaster::block_till(int sock, uint32 mask, bool anysignal, NBSocketCo
     SOCK_DUMP(printf("suspend: mask=%08x, state=%08x.\n", mysocket->mask, mysocket->state));
     mysocket->activate();
     mysocket->continuation = caller;
-    return EWOULDBLOCK;
+    return MYEWOULDBLOCK;
   }
   else // no blocking, continue to the next stage
   /*{ // now handled within the calling function itself

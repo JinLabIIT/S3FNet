@@ -90,8 +90,8 @@ class NBSocketMaster : public ProtocolSession
   enum {
     ESUCCESS        = 0, /**< Indicates success */
     EGENERIC        = -1, /**< Indicates generic error */
-    EWOULDBLOCK     = -2, /**< Function returned because it would otherwise block. */
-    EINPROGRESS     = -3, /**< Connection is currently in progress. */
+    MYEWOULDBLOCK     = -2, /**< Function returned because it would otherwise block. */
+    MYEINPROGRESS     = -3, /**< Connection is currently in progress. */
     ECONNECTED      = -4 /**< Socket is already connected. */
   };
 
